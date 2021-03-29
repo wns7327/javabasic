@@ -1,0 +1,172 @@
+# javabasic
+메가스터디 IT아카데미 3기 [자바 기본]
+
+# 1.
+
+```+java
+package day6.homework;
+
+import java.util.Scanner;
+
+public class homework1 {
+	public static void main(String[] args) {{
+		Scanner sc = new Scanner(System.in);
+		String name, bmi="";
+		float height, weight, result;
+		System.out.print("이름 : ");
+			name = sc.next();
+		System.out.print("키 : ");
+			height =sc.nextFloat();
+		System.out.print("체중 : ");
+			weight =sc.nextFloat();
+		result = (weight / (height*height))*10000;
+		if(result>30.0){  
+				bmi="비만";
+}
+		else if(result>25.0){
+				bmi="과체중";
+}
+		else if(result>18.0){
+				bmi="정상";
+	}
+		else{
+				bmi="저체중";
+	}
+		System.out.println(name + "님의 체질량지수(BMI)는" + result + "수치이고" + bmi + "입니다");
+	}
+}
+}
+```
+
+# 2
+
+```+java
+package day6.homework;
+
+import java.util.Scanner;
+
+public class homework2 {
+	public static void main(String[] args) {
+		int kor, math, eng;
+		float ave;
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("국어 영어 수학 점수를 입력하세요 :");
+		kor = sc.nextInt();
+		eng = sc.nextInt();
+		math = sc.nextInt();
+		int sum=kor+eng+math;
+		double avg=sum/3.0;
+		
+		char score = 'A';
+		ave = sum/3;
+		System.out.println("평균점수는 "+ave+"입니다");
+		if(ave>=90)
+		{
+			score='A';
+		}
+		if(ave>=80 && ave<90)
+		{
+			score='B';
+		}
+		if(ave>=70 && ave<80)
+		{
+			score='C';
+		}
+		if(ave>=60 && ave<70)
+		{
+			score='D';
+		}
+		if (ave<60)
+		{
+			score='F';
+		}
+		
+		System.out.println("총점 "+sum);
+		System.out.printf("평균:%.2f%n",avg);
+		System.out.println("학점:"+score);
+		if(ave >= 60.5) {
+			System.out.println("합격");
+		}
+		else {
+			System.out.println("불합격");
+		}
+	}
+}
+
+```
+
+# 3
+
+```+java
+package day6.homework;
+
+import java.util.Scanner;
+
+public class homework3 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int num;
+        System.out.print("수 입력 : ");
+        num = sc.nextInt();
+        if(num == 0){
+            System.out.println(num+" : 다시 입력하세요 ");
+        }else if(num %2 == 0 && num % 3 ==0){
+            System.out.println(num+" : 2,3의 배수입니다");
+        }else if(num % 2 == 0){
+            System.out.println(num+" : 2의 배수입니다");
+        }else if(num % 3 == 0){
+            System.out.println(num+" : 3의 배수입니다");
+        }else if(num % 5 == 0){
+            System.out.println(num+" : 5의 배수입니다");    
+        }else{
+            System.out.println(num+" : 해당 사항 없음");
+        }
+    }
+}
+	
+```
+
+# 4
+
+```+java
+package day6.homework;
+
+import javax.swing.JOptionPane;
+
+public class homework4 {
+	public static void main(String[] args) {
+		
+		
+		String sOld = JOptionPane.showInputDialog(null,"나이 : ");
+		int old = Integer.parseInt(sOld);
+		String sHeight = JOptionPane.showInputDialog(null,"키 : ");
+		double height = Double.parseDouble(sHeight);
+		
+		int cnt = 0 ;        
+		String num1 = "";
+		String num2 = "";
+		String num3 = "";
+		String num4 = "";
+		
+		
+		if(height >= 80 && height < 200) {             
+			 ++cnt;  num1 = "회전목마";
+		}
+		if(old >= 15 && height >= 110) {          			
+			++cnt;  num2 = "유령의집";
+		}
+		if(old >= 13 && old < 60 && height >= 140) { 		
+			++cnt;  num3 = "롤러코스터";
+		}
+		if(old >= 10 && height >= 130 && height <= 200) {			
+			++cnt;  num4 = "자이로드롭";
+		}
+		JOptionPane.showMessageDialog(null, "탑승 가능한 놀이기구 이름과 개수 : "+ num1 +","+ num2 +"," + num3 + "," + num4 +"\n총"+ cnt +"개");
+		
+				
+	}
+}
+
+```
+
